@@ -13,17 +13,18 @@ posts = [
         'title' : 'Blog Post 2',
         'content' : 'Second post ever',
         'date_posted' : 'September 27, 2005',
-    }    
+    } 
 ]
 
 
 def home(request):
     context = {
-        'posts' : posts
+        'posts' : posts,
+        'title' : 'Home Page'
     }
     return render(request, 'blog/home.html', context)
 
 
 def about(request):
-    return render(request, 'blog/about.html')
+    return render(request, 'blog/about.html', {'title' : 'about'})
 
