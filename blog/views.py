@@ -27,3 +27,9 @@ def home(request):
 def about(request):
     return render(request, 'blog/about.html', {'title' : 'about'})
 
+
+def contacts(request):
+    context = {
+        'name' : 'egis1',
+    }
+    return render(request, 'blog/contacts.html', context)
