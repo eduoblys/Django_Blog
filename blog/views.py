@@ -75,12 +75,13 @@ class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html', {'title' : 'about'})
 
-
+"""
 def contacts(request):
     context = {
         'name' : 'egis1',
     }
     return render(request, 'blog/contacts.html', context)
+"""
 
 class Contacts(TemplateView):
     template_name = 'blog/contacts.html'
