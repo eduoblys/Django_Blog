@@ -1,5 +1,5 @@
 import os
-
+import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -13,7 +13,7 @@ SECRET_KEY = '0+*j^95x1px@kwc@r(_se8$cc@(!vg1e&gm%)@^=)__o9h_5k2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['bootycrafter.herokuapp.com']
 
 
 # Application definition
@@ -110,7 +110,7 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
-
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -132,3 +132,4 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')          #using environmental variables for both USER and PASS
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')      #and calling them in urls.py
 
+django_heroku.settings(locals())
