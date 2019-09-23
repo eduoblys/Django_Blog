@@ -13,7 +13,7 @@ SECRET_KEY = '0+*j^95x1px@kwc@r(_se8$cc@(!vg1e&gm%)@^=)__o9h_5k2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bootycrafter.herokuapp.com']
+ALLOWED_HOSTS = ['eduoblys.herokuapp.com']
 
 
 # Application definition
