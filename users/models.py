@@ -10,8 +10,6 @@ class Profile(models.Model):
         return f'{self.user.username} Profile'
 
 
-
-"""
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
 
@@ -21,4 +19,3 @@ class Profile(models.Model):
             output_size = (300, 300)
             img.thumbnail(output_size)
             img.save(self.image.path)
-"""
