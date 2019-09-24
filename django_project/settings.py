@@ -1,8 +1,6 @@
 import os
-import django_heroku
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.2/howto/deployment/checklist/
@@ -13,8 +11,7 @@ SECRET_KEY = '0+*j^95x1px@kwc@r(_se8$cc@(!vg1e&gm%)@^=)__o9h_5k2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['eduoblys.herokuapp.com']
-
+#ALLOWED_HOSTS = ['eduoblys.herokuapp.com']
 
 # Application definition
 
@@ -94,7 +91,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
@@ -107,7 +103,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -128,7 +123,6 @@ LOGIN_URL = 'login'
 
 SENDFILE_BACKEND = 'sendfile.backends.simple'
 
-
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
@@ -136,6 +130,8 @@ EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')          #using environmental variables for both USER and PASS
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')      #and calling them in urls.py
 
+
+"""
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
@@ -148,3 +144,4 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'        #django
 
 django_heroku.settings(locals())
 
+"""
