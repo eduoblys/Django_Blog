@@ -13,7 +13,7 @@ SECRET_KEY = '0+*j^95x1px@kwc@r(_se8$cc@(!vg1e&gm%)@^=)__o9h_5k2'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['bootycrafter.herokuapp.com']
+ALLOWED_HOSTS = ['eduoblys.herokuapp.com']
 
 
 # Application definition
@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'storages',
     #'django-tinymce4-lite',
 ]
 
@@ -131,5 +132,14 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = os.environ.get('EMAIL_USER')          #using environmental variables for both USER and PASS
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')      #and calling them in urls.py
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = os.environ.get('AWS_STORAGE_BUCKET_NAME')
+
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL = None
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'        #django-storages Amazon S3 docs
 
 django_heroku.settings(locals())
